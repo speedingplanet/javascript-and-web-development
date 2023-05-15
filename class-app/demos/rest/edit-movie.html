@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="../../css/bootstrap.css" />
+	<title>Edit a Movie</title>
+</head>
+
+<body>
+	<main class="container">
+		<header class="row">
+			<div class="col">
+				<h1>Edit a Movie</h1>
+				<hr />
+			</div>
+		</header>
+		<section class="row">
+			<div class="col">
+				<ul class="list-inline">
+					<li class="list-inline-item"><a href="list-movies.html">List Movies</a></li>
+					<li class="list-inline-item"><a href="add-movie.html">Add a Movie</a></li>
+					<li class="list-inline-item"><a href="edit-movie.html">Edit a Movie</a></li>
+				</ul>
+			</div>
+		</section>
+		<form id="edit-movie-form">
+			<!-- title, year, director, writer, rating, genres -->
+			<!-- div>label.form-label+input:text#movie-title.form-control -->
+			<!-- Title -->
+			<div>
+				<label for="movie-title" class="form-label">
+					Title:
+				</label>
+				<input type="text" name="title" id="movie-title" class="form-control" />
+			</div>
+			<!-- Year -->
+			<div>
+				<label for="movie-year" class="form-label">
+					Year:
+				</label>
+				<input type="number" name="year" id="movie-year" class="form-control" />
+			</div>
+			<!-- Director -->
+			<div>
+				<label for="movie-director" class="form-label">
+					Director:
+				</label>
+				<input type="text" name="director" id="movie-director" class="form-control" />
+			</div>
+			<!-- Writer -->
+			<div>
+				<label for="movie-writer" class="form-label">
+					Writer(s):
+				</label>
+				<input type="text" name="writer" id="movie-writer" class="form-control" />
+			</div>
+			<!-- Rating -->
+			<div>
+				<label for="movie-rating" class="form-label">
+					Rating:
+				</label>
+				<input type="number" name="rating" id="movie-rating" class="form-control" />
+			</div>
+			<!-- Genres -->
+			<div>
+				<label for="movie-genres" class="form-label">
+					Genres:
+				</label>
+				<input type="text" name="genres" id="movie-genres" class="form-control" />
+			</div>
+			<!-- div.mt-3>button:submit.btn.btn-primary{Add Movie} -->
+			<div class="mt-3">
+				<button type="submit" class="btn btn-primary">
+					Edit Movie
+				</button>
+			</div>
+			<input type="hidden" name="id" id="movie-id" />
+		</form>
+	</main>
+	<script src="edit-movie.js" type="module"></script>
+</body>
+
+</html>

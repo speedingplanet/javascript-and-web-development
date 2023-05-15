@@ -1,0 +1,25 @@
+{
+  "name": "class-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "rest": "json-server --port 8000 data/all-data.json",
+    "setup": "node scripts/setup.js"
+  },
+  "devDependencies": {
+    "@speedingplanet/eslint-config": "^0.0.2",
+    "eslint": "^8.40.0",
+    "json-server": "^0.17.3",
+    "prettier": "^2.8.8",
+    "qunit": "^2.19.4",
+    "vite": "^4.3.2",
+    "vite-plugin-list-directory-contents": "^1.4.5"
+  },
+  "dependencies": {
+    "axios": "^1.4.0"
+  }
+}

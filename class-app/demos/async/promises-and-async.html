@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<link
+			rel="stylesheet"
+			href="/css/bootstrap.css"
+		/>
+		<title>Promises and async-await</title>
+	</head>
+	<body>
+		<main class="container">
+			<header class="row">
+				<div class="col">
+					<h1>Promises and async-await</h1>
+					<hr />
+				</div>
+			</header>
+			<div class="row">
+				<div class="col">
+					<div>
+						<button
+							id="btn-unchained-promise"
+							class="btn btn-primary"
+						>
+							Load using unchained promises
+						</button>
+					</div>
+					<div id="target-unchained-promise"></div>
+				</div>
+				<div class="col">
+					<div>
+						<button
+							id="btn-chained-promise"
+							class="btn btn-primary"
+						>
+							Load using chained promises
+						</button>
+					</div>
+					<div id="target-chained-promise"></div>
+				</div>
+				<div class="col">
+					<div>
+						<button
+							id="btn-async-await"
+							class="btn btn-primary"
+						>
+							Load using async/await
+						</button>
+					</div>
+					<div id="target-async-await"></div>
+				</div>
+			</div>
+		</main>
+		<script
+			src="promises-and-async.js"
+			type="module"
+		></script>
+	</body>
+</html>

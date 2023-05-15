@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="../../css/bootstrap.css" />
+	<style>
+		.hide-edit-button a {
+			visibility: hidden;
+		}
+
+		.hide-edit-button:hover a {
+			visibility: visible;
+		}
+	</style>
+	<title>Movies List</title>
+</head>
+
+<body>
+	<main class="container">
+		<header class="row">
+			<div class="col">
+				<h1>Movies List</h1>
+				<hr />
+			</div>
+		</header>
+		<section class="row">
+			<div class="col">
+				<ul class="list-inline">
+					<li class="list-inline-item"><a href="list-movies.html">List Movies</a></li>
+					<li class="list-inline-item"><a href="add-movie.html">Add a Movie</a></li>
+					<li class="list-inline-item"><a href="edit-movie.html">Edit a Movie</a></li>
+				</ul>
+			</div>
+		</section>
+		<!-- .row>.col#movies-table -->
+		<div class="row">
+			<div class="col">
+				<!-- table.table.table-striped#movies-table>thead>tr>th*4 -->
+				<table class="table table-striped" id="movies-table" hidden>
+					<thead>
+						<tr>
+							<th>Title</th>
+							<th>Year</th>
+							<th>Director</th>
+							<th>Rating</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+	</main>
+	<script src="list-movies.js" type="module"></script>
+</body>
+
+</html>

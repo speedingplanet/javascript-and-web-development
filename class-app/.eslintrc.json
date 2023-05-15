@@ -1,0 +1,6 @@
+{
+	"extends": "@speedingplanet/eslint-config",
+	"rules": {
+		"array-element-newline": ["warn", "consistent"]
+	}
+}
