@@ -2,7 +2,7 @@
 
 ## Lab 1: Warm-up
 
-In the `lab` folder, create a file `greeter.html`.  
+In the `labs` folder, create a file `greeter.html`.  
 Add a `div` with an id that you can remember, like `output`.
 
 Add an in-line `script` block which:
@@ -15,8 +15,8 @@ Load greeter.html into your browser to see if it works. If you've started the de
 ## Lab 2: Improvements and modules
 
 Take the code in the in-line `script` block and move it to its own file: `greeter.js`.  
-Reference the JavaScript file from the HTML file. Be sure to reference `greeter.js`
-as a module, not just a plain JavaScript file.
+
+Reference the JavaScript file from the HTML file. Be sure to reference `greeter.js` as a module, not just a plain JavaScript file.
 
 Re-verify that everything works. Make sure you view this through the web server, e.g.
 http://localhost:5173/labs/greeter.html.
@@ -27,15 +27,13 @@ http://localhost:5173/labs/greeter.html.
 
 Add a button to the page that says "Greet me".
 
-If you want to style the button nicely, add the following tag somewhere in the `<head>`
-section of your HTML document:
+If you want to style the button nicely, add the following tag somewhere in the `<head>` section of your HTML document:
 
 ```html
 <link rel="stylesheet" href="/css/bootstrap.css" />
 ```
 
-You can replace everything within the `body` (but **not** the `script` tag) with
-the following:
+You can replace everything within the `body` (but **not** the `script` tag) with the following:
 
 ```html
 <!-- Emmet: main.container>header.row>.col>h1 -->
@@ -60,30 +58,23 @@ the following:
 </main>
 ```
 
-Check the [Bootstrap Documentation](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
-for more details. Especially look at the [buttons documentation](https://getbootstrap.com/docs/5.2/components/buttons/)
+Check the [Bootstrap Documentation](https://getbootstrap.com/docs/5.2/getting-started/introduction/) for more details. Especially look at the [buttons documentation](https://getbootstrap.com/docs/5.2/components/buttons/)
 
 ### JavaScript
 
-In your JavaScript file, comment out the code that greets you by name.  
-Hook up an event handler to the button, so that when someone clicks on the
-button, they are greeted. You will have to hard-code the name for now.
+In your JavaScript file, comment out the code that greets you by name. Hook up an event handler to the button, so that when someone clicks on the button, they are greeted. You will have to hard-code the name for now.
 
-You are, in essence, taking the code from the last exercise, and instead
-of running it when the page loads, running it when the user clicks on a button.
+You are, in essence, taking the code from the last exercise, and instead of running it when the page loads, running it when the user clicks on a button.
 
 Load greeter.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html. 
 
 ## Lab 4: Form input
 
-We will add a single-line text field to the HTML, and then capture the content there
-to greet the user by their name.
+We will add a single-line text field to the HTML, and then capture the content there to greet the user by their name.
 
 ### HTML
 
-Add a single-line text field to your HTML file. Bootstrap has lots of information on
-[form controls](https://getbootstrap.com/docs/5.2/forms/form-control/). Here's an example
-of what you could use:
+Add a single-line text field to your HTML file. Bootstrap has lots of information on [form controls](https://getbootstrap.com/docs/5.2/forms/form-control/). Here's an example of what you could use:
 
 ```html
 <!-- Emmet: div>label.form-label+input:text.form-control#user-name -->
@@ -95,9 +86,7 @@ of what you could use:
 
 ### JavaScript
 
-Update the event handler on the button to grab the input from the text field.  
-Then, use that information to render a customized greeting, using the user's
-name, rather than the previously hard-coded name.
+Update the event handler on the button to grab the input from the text field. Then, use that information to render a customized greeting, using the user's name, rather than the previously hard-coded name.
 
 ## Lab 5: Fine-tuning our button
 
@@ -111,8 +100,7 @@ Load greeter.html into your browser to see if it works. If you've started the de
 
 ## Lab 6: More event handling
 
-We will create a version of the greeter page that doesn't need a button
-to activate.
+We will create a version of the greeter page that doesn't need a button to activate.
 
 ### HTML
 
@@ -135,12 +123,9 @@ Load greeter.html into your browser to see if it works. If you've started the de
 
 #### Improvements
 
-Set up the event handler so that it does not render the greeting until the
-input is at least two characters long.
+Set up the event handler so that it does not render the greeting until the input is at least two characters long.
 
-Update the event handler so that it displays a default greeting ("Hello!"
-"Greetings to you!" or similar). When the input reaches the minimum, replace
-the default greeting with the customized one.
+Update the event handler so that it displays a default greeting ("Hello!" "Greetings to you!" or similar). When the input reaches the minimum, replace the default greeting with the customized one.
 
 ## Lab 7: A full form
 
