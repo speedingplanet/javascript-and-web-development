@@ -5,6 +5,12 @@ import process from 'node:process';
 import path from 'node:path';
 import fs from 'fs-extra';
 
+/*
+ * TODOs
+ *
+ * What if someone passes "lab-01" instead of "1" or "01"
+ */
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
