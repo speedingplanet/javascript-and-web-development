@@ -1,3 +1,19 @@
+
+/*
+function handleClick(event) {
+	console.log('The object that emitted the event:', event.target);
+}
+
+button.addEventListener('click', handleClick);
+*/
+
+/*
+let p = new Promise(function (resolve, reject) {
+	// Call resolve with a value to resolve successfully.
+	// Call reject or throw an error to reject/fail
+})
+*/
+
 let origin = new Promise((resolve) => resolve(10));
 
 let p1 = origin.then((v1) => {
@@ -29,3 +45,16 @@ p3.then(
 		console.error(`p3 rejected with an error message of [${error.message}]`);
 	}
 );
+
+origin.then((chain1) => {
+	// chain1 should be 10
+	return chain1 + 1;
+})
+	.then(chain2 => {
+	// chain2 should be 11
+		return chain2 + 1;
+	})
+	.then(chain3 => {
+	// chain3 should be 12
+		return chain3 + 1;
+	});

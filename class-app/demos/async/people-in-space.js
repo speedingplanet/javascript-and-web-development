@@ -1,16 +1,17 @@
 let url = 'http://api.open-notify.org/astros.json';
 
 fetch(url)
-	.then((response) => {
+	.then(response => {
+		// Is response.status between 200-299?
 		if (response.ok) {
-			return response.json();
+			return response.json(); // Returns a Promise that resolves to a JS object
 		} else {
-			throw new Error('Could not retrieve astronauts (data)');
+			throw new Error(`Could not retrieve astronauts (data) ${response.status}`);
 		}
 	})
-	.then(astronauts => {
+	.then(results => {
 		let list = document.querySelector('#astronaut-list');
-		let items = astronauts.people.map((person) => {
+		let items = results.people.map((person) => {
 			let li = document.createElement('li');
 			li.textContent = `${person.name} on ${person.craft}`;
 			return li;
@@ -20,4 +21,3 @@ fetch(url)
 	.catch(error => {
 		console.error('Could not fetch or render astronauts with regular fetch:', error.message);
 	});
-;

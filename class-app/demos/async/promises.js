@@ -16,6 +16,7 @@ let initialPromise = generateAPromiseThat('random');
 // Promise API: promise.then(successCallback, failureCallback?)
 
 // Success and failure
+// Promise.then(onSuccess?, onError?)
 initialPromise.then(
 	(result) => console.log(`Resolved with ${result}`),
 	(error) => console.error(`Failed with ${error}`)
@@ -23,8 +24,8 @@ initialPromise.then(
 
 // Chained success and failure
 initialPromise
-	.then((success) => console.log('Chained success'))
-	.catch((error) => console.log('Chained fail'));
+	.then((success) => console.log(`Chained success: ${success}`))
+	.catch((error) => console.log(`Chained fail: ${error}`));
 
 // Standalone
 generateAPromiseThat('fails')
