@@ -1,16 +1,18 @@
 /* eslint-disable no-unused-vars */
 
 // Typical function declaration
+// ONLY function declarations are hoisted (see below)
 function add(x, y) {
 	return x + y;
 }
 
-// Function expression
+// Function expression (not hoisted)
 const expressionFunction = function () {
 	console.log('This is a function expression');
 };
 
 // Arrow function (see arrow-functions.js for more)
+// (also not hoisted)
 const arrowFunction = () => {
 	console.log('This is an arrow function');
 };
@@ -41,11 +43,22 @@ function addDefaults(x = 0, y = 10) {
 	return x + y;
 }
 
+// Before we had default values for parameters, this is how we
+// checked for empty/undefined parameters
+function addDefaultsOld(x, y) {
+	if (x === undefined) x = 0;
+	if (y === undefined) y = 10;
+	return x + y;
+}
+
 addDefaults(5); // 15
 
 // Function signatures are not enforced in JavaScript
 // Allowed
 addDefaults(5, 7); // 12
+
+// If we used @ts-check, this line would have an error because of the
+// mismatching signatures
 addDefaults(1, 2, 3, 4, 5); // 3
 addDefaults(undefined, 5); // 5
 addDefaults(1); // 11
