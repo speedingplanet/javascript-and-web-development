@@ -56,12 +56,6 @@ function useInsertAdjacentHTML() {
 		list.insertAdjacentHTML('beforeEnd', `<li>${movie.title} (${movie.year})</li>`);
 	}
 
-	/*
-	movies.forEach((movie) => {
-		list.insertAdjacentHTML('beforeEnd', `<li>${movie.title} (${movie.year})</li>`);
-	});
-	*/
-
 	// One repaint
 	// root.append(list);
 	root.replaceChildren(list);
@@ -74,16 +68,17 @@ function useInnerHTML() {
 
 	// Empty out the element
 	// forces a repaint
+	// Maybe not necessary?
 	root.innerHTML = '';
 
 	let list = '<ul>';
 	for (let movie of movies) {
 		list = list + `<li>${movie.title} (${movie.year})</li>`;
 	}
-	// movies.forEach((movie) => (list += `<li>${movie.title} (${movie.year})</li>`));
 	list += '</ul>';
 
 	// One more repaint, may trigger document-wide repaint
+	// Browser also has to parse your HTML
 	root.innerHTML = list;
 }
 
