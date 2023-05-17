@@ -127,40 +127,89 @@ Set up the event handler so that it does not render the greeting until the input
 
 Update the event handler so that it displays a default greeting ("Hello!" "Greetings to you!" or similar). When the input reaches the minimum, replace the default greeting with the customized one.
 
-## Lab 7: A full form
+## Lab 7: Rendering data to the page
+
+New setup! Run `npm run set begin 7` before doing anything else.
+
+Note that we now have something a little closer to a "site". 
+
+We are going to render a list of students in `list-students.html`. The HTML is already set up for you, in `list-students.html`. The critical tag to pay attention to is the `div` with the id "output". 
+
+### JavaScript
+
+Working in `js/list-students.js`
+
+- Import `students` from `../../data/all-data-typed.js`
+- Write a function `buildTable`: 
+  - It should take arguments of an array of students to render
+  - It should return a HTML table where each row consists of
+    - First Name
+    - Last Name
+    - City
+    - Province
+  - There's a quick HTML table reference below
+- Call `buildTable` when the page loads, passing it the list of students
+  you imported
+- Then render the returned HTML table to the div with the ID output
+
+#### HTML Table reference
+
+```html
+<table>
+	<thead>
+		<tr>
+			<th>Column 1</th>
+			<th>Column 2</th>
+			<th>Column 3</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Row 1 Column 1</td>
+			<td>Row 1 Column 2</td>
+			<td>Row 1 Column 3</td>
+		</tr>
+		<tr>
+			<td>Row 2 Column 1</td>
+			<td>Row 2 Column 2</td>
+			<td>Row 2 Column 3</td>
+		</tr>
+	</tbody>
+</table>
+```
+
+Check to see if everything works! Load greeter.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html. 
+
+## Lab 8: Async
+
+We will replace importing the data directly with fetching the data from a remote source.
+
+- From a command prompt, make sure that you run `npm run rest`. This will
+  start a server at http://localhost:8000. You can visit that address in your
+  browser to test it.
+- Remove the import of "students" from the top of the file
+- Create a function `getData`. It should take an argument of a URL.
+- In `getData`, use the `fetch` command to retrieve data from the supplied
+  URL. You can assume the data will be in the right format (i.e., an array of student objects)
+  - You can use async/await format
+  - Or Promises
+- Return the array of students/Promise of the array of students from `getData`
+- In the main part of the script, add a function called `main` and make it `async`
+- Move the code that was previously at the top level of the file inside `main`
+  - This should be the call to `buildTable` and the code to get a reference to the output div
+- Either using Promises or async/await, take the return value from `getData`
+  and pass it to `buildTable` from the last lab.
+- Render the table as you did before
+
+Test your code and see if it works! Load greeter.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html. 
+
+## Lab 10: A full form
 
 We will add a complete form to the page and grab the content from it to greet the user.
 
 ### HTML
 
-We have to create a form and add some form fields to it.
-
-- Create a `form` element, and within it:
-- Add a single-line text field called `first-name`
-- Change the existing single-line text field to `last-name`
-- Add a submit button
-
-Ultimately, the input section of the document should look like this:
-
-```html
-<form id="user-form">
-  <div class="row">
-    <div class="col">
-      <label for="first-name" class="form-label">Enter your first name:</label>
-      <input type="text" name="first-name" id="first-name" class="form-control" />
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <label for="last-name" class="form-label">Enter your last name:</label>
-      <input type="text" name="last-name" id="last-name" class="form-control" />
-    </div>
-  </div>
-  <div class="row mt-2">
-    <div class="col"><button type="submit" class="btn btn-primary">Greet me</button></div>
-  </div>
-</form>
-```
+We have an existing form at `add-student.html`. Take a minute to look at it now.
 
 ### JavaScript
 
@@ -175,94 +224,3 @@ Create a `submit` event handler and attach it to the form.
 
 Load greeter.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html. 
 
-## Lab 8: Rendering data to the page
-
-Now we'll add a list of students to the page. Ultimately, we will want the form data to be added to this list of students
-
-### HTML
-
-Add a row, col, and div with an id "student-list" below the `#output` row, col and div.
-
-```html
-<div class="row">
-  <div class="col" id="output"></div>
-</div>
-<div class="row">
-  <div class="col" id="students-list">
-    <hr/>
-		<header>
-			<h3>Students</h3>
-		</header>
-  </div>
-</div>
-```
-
-### JavaScript
-
-- Import `students` from `../data/all-data-typed.js`
-- Write a function `renderStudents`. It shuold take arguments of an array of
-  students to render, and an element to render the students to.
-- `renderStudents` should build an unordered list, where each student's first
-  and last names are list items. Like this:
-
-```html
-<ul>
-  <li>John Paxton</li>
-  <li>Bob Dobalina</li>
-  <!-- And so on -->
-</ul>
-```
-
-- `renderStudents` should render this unordered list into the element with the
-  id in the second argument to the function
-- Call `renderStudents` when the page loads, passing it the list of students
-  you imported, and the id 'student-list'
-
-Check to see if everything works! Load greeter.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html. 
-
-### Challenge
-
-Instead of building an unordered list, build an HTML table. Here's a sample:
-
-```html
-<table>
-  <thead>
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>John</td>
-      <td>Paxton</td>
-    </tr>
-    <tr>
-      <td>Bob</td>
-      <td>Dobalina</td>
-    </tr>
-    <!-- And so on -->
-  </tbody>
-</table>
-```
-
-## Lab 9: Async
-
-We will replace importing the data directly with fetching the data from a remote source.
-
-- From a command prompt, make sure that you run `npm run rest`. This will
-  start a server at http://localhost:8000. You can visit that address in your
-  browser to test it.
-- Remove the import of "students" from the top of the file
-- Create a function `fetchStudents`. It should take an argument of a URL.
-- In `fetchStudents`, use the `fetch` command to retrieve data from the supplied
-  URL. You can assume the data will be in the right format (i.e., an array of student objects)
-  - You can use async/await format
-  - Or Promises
-- Return the array of students/Promise of the array of students from `fetchStudents`
-- In the main part of the script, call `fetchStudents` when the page is loaded, 
-  and retrieve the results
-- Either using Promises or async/await, take the return value from `fetchStudents`
-  and pass it to `renderStudents` from the last lab.
-
-Test your code and see if it works! Load greeter.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html. 
