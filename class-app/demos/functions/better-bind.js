@@ -1,3 +1,4 @@
+// @ts-check
 let button = document.querySelector('#click-button');
 let logger = {
 	count: 0,
@@ -11,23 +12,27 @@ let logger = {
 		this.count++;
 	},
 
-	// Sets count on the global object (!)
+	// If we're in type="module", then throws an error
+	// If not, updates the window/globalThis object (!)
 	updateCountArrow: () => {
 		this.count++;
 	},
 };
 
 // Problems (whether *Declaration, *Expression, or *Arrow)
-// button.addEventListener('click', logger.updateCountDeclaration);
+// button?.addEventListener('click', logger.updateCountArrow);
 
 // Solution, still doesn't work with the arrow function, though
-button.addEventListener('click', logger.updateCountDeclaration.bind(logger));
+let boundUpdater = logger.updateCountDeclaration.bind(logger);
+button?.addEventListener('click', boundUpdater);
 
 // Solution, use the arrow function OUTSIDE the call
-// button.addEventListener('click', () => logger.updateCountDeclaration());
+// button?.addEventListener('click', (e1, e2) => logger.updateCountDeclaration());
 
 // Print the current count
-button.addEventListener('click', () => {
+button?.addEventListener('click', () => {
 	let output = document.querySelector('#output');
-	output.textContent = `Click count: ${logger.count}`;
+	if (output !== null) {
+		output.textContent = `Click count: ${logger.count}`;
+	}
 });
