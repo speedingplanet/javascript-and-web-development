@@ -1,5 +1,6 @@
 {
 	"extends": "@speedingplanet/eslint-config",
+	"ignorePatterns": ["data/data.d.ts"],
 	"rules": {
 		"array-element-newline": ["warn", "consistent"]
 	}
