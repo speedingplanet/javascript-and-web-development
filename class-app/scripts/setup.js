@@ -57,9 +57,9 @@ async function begin(labNumber) {
 		let labsFromExists = await fs.exists(labsFrom);
 		if (!labsFromExists) throw new Error(`Could not find lab ${labNumber}`);
 		await backup();
-		let labsTo = path.resolve(__dirname, labsLocalPrefix, labDir);
+		let labsTo = path.resolve(__dirname, labsLocalPrefix);
 		await fs.copy(labsFrom, labsTo);
-		console.log(`Successfully set up the labs folder for ${labDir}`);
+		console.log(`Successfully set up the labs folder for ${labsLocalPrefix}`);
 	} catch (err) {
 		console.error(`begin(): ${err.message}`);
 	}
