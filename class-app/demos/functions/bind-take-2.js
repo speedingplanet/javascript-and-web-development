@@ -58,7 +58,16 @@ let car = {
 console.log(`Average mileage for my car: ${getAverageMileage2023(car.year, car.mileage)}`);
 console.log(`Average mileage for my car: ${getAverageMileageFrom2000To2010(car.mileage)}`);
 
-// console.log(`My car's mileage: ${car.getMileage()}`);
+let person = {
+	firstName: 'John',
+	lastName: 'Paxton',
+};
+
+person.getFirstName = function () {
+	return this.firstName;
+};
+
+console.log(`My first name is ${person.getFirstName()}`);
 
 /*
 
