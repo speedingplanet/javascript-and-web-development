@@ -41,6 +41,10 @@
 				<div id="keydown-log"></div>
 			</div>
 			<div class="col">
+				<h3>Keyup</h3>
+				<div id="keyup-log"></div>
+			</div>
+			<div class="col">
 				<h3>Input</h3>
 				<div id="input-log"></div>
 			</div>
@@ -59,9 +63,15 @@
 		textField.addEventListener('keydown', (e) =>
 			logMessage(`${e.key} / ${e.keyCode} / ${e.target.value}`, 'keydown-log')
 		);
+
+		textField.addEventListener('keyup', (e) =>
+			logMessage(`${e.key} / ${e.keyCode} / ${e.target.value}`, 'keyup-log')
+		);
+
 		textField.addEventListener('input', (e) =>
 			logMessage(`${e.data} / ${e.target.value}`, 'input-log')
 		);
+
 		textField.addEventListener('change', () => logMessage(textField.value, 'change-log'));
 
 		function logMessage(message, destination) {
