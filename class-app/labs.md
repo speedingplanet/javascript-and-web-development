@@ -129,7 +129,7 @@ Update the event handler so that it displays a default greeting ("Hello!" "Greet
 
 ## Lab 7: Rendering data to the page
 
-New setup! Run `npm run set begin 7` before doing anything else.
+New setup! Run `npm run setup begin 7` before doing anything else.
 
 Note that we now have something a little closer to a "site". 
 
@@ -141,7 +141,7 @@ Working in `js/list-students.js`
 
 - Import `students` from `../../data/all-data-typed.js`
 - Write a function `buildTable`: 
-  - It should take arguments of an array of students to render
+  - It should take an argument of an array of students to render
   - It should return a HTML table where each row consists of
     - First Name
     - Last Name
