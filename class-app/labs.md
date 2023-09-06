@@ -2,7 +2,9 @@
 
 ## Lab 1: Warm-up
 
-In the `labs` folder, create a file `greeter.html`.  
+From a command prompt, run `npm run setup begin 1`. You will get a message along the lines of "backup(): ENOENT: no such file or directory...". This is fine. A `labs` directory should appear in your file explorer.
+
+In the `labs` folder, open `greeter.html`.  
 Add a `div` with an id that you can remember, like `output`.
 
 Add an in-line `script` block which:
@@ -26,12 +28,6 @@ http://localhost:5173/labs/greeter.html.
 ### HTML
 
 Add a button to the page that says "Greet me".
-
-If you want to style the button nicely, add the following tag somewhere in the `<head>` section of your HTML document:
-
-```html
-<link rel="stylesheet" href="/css/bootstrap.css" />
-```
 
 You can replace everything within the `body` (but **not** the `script` tag) with the following:
 
@@ -58,7 +54,7 @@ You can replace everything within the `body` (but **not** the `script` tag) with
 </main>
 ```
 
-Check the [Bootstrap Documentation](https://getbootstrap.com/docs/5.2/getting-started/introduction/) for more details. Especially look at the [buttons documentation](https://getbootstrap.com/docs/5.2/components/buttons/)
+Check the [Bootstrap Documentation](https://getbootstrap.com/docs/5.2/getting-started/introduction/) for more details about the classes `container`, `row`, and `col`. Especially look at the [buttons documentation](https://getbootstrap.com/docs/5.2/components/buttons/)
 
 ### JavaScript
 
@@ -66,7 +62,7 @@ In your JavaScript file, comment out the code that greets you by name. Hook up a
 
 You are, in essence, taking the code from the last exercise, and instead of running it when the page loads, running it when the user clicks on a button.
 
-Load greeter.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html. 
+Load `greeter.html` into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html. 
 
 ## Lab 4: Form input
 
