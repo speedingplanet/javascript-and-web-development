@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<title>Adding text vs adding HTML</title>
+</head>
+<body>
+	<main class="container">
+		<header class="row">
+			<div class="col">
+				<h1>Adding text vs adding HTML</h1>
+				<hr>
+			</div>
+		</header>
+		<!-- .row>.col*2 -->
+		<div class="row">
+			<div class="col">
+				<button class="btn btn-info" id="add-text-button">Add text</button>
+				<div>
+					<p>Add some text here:</p>
+				</div>
+			</div>
+			<div class="col">
+				<button class="btn btn-warning" id="add-html-button">Add content</button>
+				<div>
+					<ol>
+						<li>Add elements</li>
+						<li>to this</li>
+						<li>list</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</main>
+	<script src="adding-text-vs-html.js" type="module"></script>
+</body>
+</html>
