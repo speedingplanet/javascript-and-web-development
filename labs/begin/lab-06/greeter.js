@@ -19,7 +19,7 @@ button.addEventListener('click', clickHandler);
 // Handling the enabling/disabling of the "Say hello!" button
 
 // Event handler, needs access to the event object
-function handleInput(event) {
+function inputHandler(event) {
 	if (event.target.value.trim()) {
 		button.disabled = false;
 	} else {
@@ -29,4 +29,4 @@ function handleInput(event) {
 
 // This is duplicated in clickHandler, we should make it better
 let inputField = document.querySelector('#greet-name');
-inputField.addEventListener('input', handleInput);
+inputField.addEventListener('input', inputHandler);

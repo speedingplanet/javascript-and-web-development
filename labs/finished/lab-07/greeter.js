@@ -1,8 +1,3 @@
-// Get references to important elements
-// let button = document.querySelector('#greet-button');
-let outputElement = document.querySelector('#output');
-let inputField = document.querySelector('#greet-name');
-
 // Write an event handler function
 /*
 function clickHandler(inputField, outputElement) {
@@ -15,7 +10,7 @@ function clickHandler(inputField, outputElement) {
 */
 
 // Handling the enabling/disabling of the "Say hello!" button
-function handleInput(event, outputElement) {
+function inputHandler(event, outputElement) {
 	if (event.target.value.trim().length > 1) {
 		outputElement.textContent = `Hello, ${event.target.value}`;
 	} else {
@@ -23,4 +18,9 @@ function handleInput(event, outputElement) {
 	}
 }
 
-inputField.addEventListener('input', (e) => handleInput(e, outputElement));
+// Get references to important elements
+// let button = document.querySelector('#greet-button');
+let outputElement = document.querySelector('#output');
+let inputField = document.querySelector('#greet-name');
+
+inputField.addEventListener('input', (e) => inputHandler(e, outputElement));
