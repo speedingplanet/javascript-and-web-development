@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<link
+			rel="stylesheet"
+			href="/css/bootstrap.css"
+		/>
+		<title>Events and defaults</title>
+	</head>
+	<body>
+		<main class="container">
+			<header class="row">
+				<div class="col">
+					<h1>Preventing default behavior</h1>
+				</div>
+			</header>
+			<div class="row">
+				<div class="col">
+					<ul>
+						<li>
+							Links: hovering (can't be prevented with JS)
+							<ul>
+								<li><a href="#">Default</a></li>
+								<li>
+									<a
+										id="link-hover-prevented"
+										href="#"
+									>
+										Prevented
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							Links: clicking
+							<ul>
+								<li><a href="https://mathworks.com">Default</a></li>
+								<li>
+									<a
+										id="link-click-prevented"
+										href="https://mathworks.com"
+									>
+										Prevented
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<h3>Forms: submit: default</h3>
+					<form id="default-form">
+						<label
+							for="default-submit"
+							class="form-label"
+						>
+							Enter your name
+						</label>
+						<input
+							type="text"
+							name="default-submit"
+							id="default-submit"
+							class="form-control"
+						/>
+						<div class="mt-2">
+							<button
+								type="submit"
+								class="btn btn-primary"
+							>
+								Submit
+							</button>
+						</div>
+					</form>
+				</div>
+				<div class="col">
+					<h3>Forms: submit: prevented</h3>
+					<form id="prevent-form">
+						<label
+							for="prevent-submit"
+							class="form-label"
+						>
+							Enter your name
+						</label>
+						<input
+							type="text"
+							name="prevent-submit"
+							id="prevent-submit"
+							class="form-control"
+						/>
+						<div class="mt-2">
+							<button
+								type="submit"
+								class="btn btn-primary"
+							>
+								Submit
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</main>
+		<script>
+			let preventHover = document.querySelector('#link-hover-prevented');
+			let preventClick = document.querySelector('#link-click-prevented');
+
+			preventHover.addEventListener('mouseenter', (e) => {
+				console.log('Canceling mouseenter');
+				e.preventDefault();
+			});
+			preventHover.addEventListener('mouseover', (e) => {
+				console.log('Canceling mouseover');
+				e.preventDefault();
+			});
+
+			preventClick.addEventListener('click', (e) => {
+				console.log('Preventing a click action');
+				e.preventDefault();
+			});
+
+			let defaultForm = document.querySelector('#default-form');
+			let preventForm = document.querySelector('#prevent-form');
+
+			preventForm.addEventListener('submit', (e) => {
+				console.log('Form submission prevented');
+				e.preventDefault();
+			});
+		</script>
+	</body>
+</html>
