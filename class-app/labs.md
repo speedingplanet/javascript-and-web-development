@@ -94,7 +94,17 @@ Hint: The `value` property of the form field is a String. Strings have a `length
 
 Load greeter.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html. 
 
-## Lab 6: More event handling
+## Lab 6: Improve for testing
+
+We should improve our code to make it easier to test. There are too many cases where our event handlers assume elements are available, making testing difficult.
+
+- Move the assignments of the references to the "Say hello" button, the input text field, and the output div, to the top of `greeter.js`
+- Change the event handler for the button (`clickHandler`) so that it takes references to the text field and the output div as arguments
+- Change the assignment of `clickHandler` so that instead of a function reference, you call `clickHandler` with the appropriate arguments
+- Change the event handler for the form field (`inputHandler`) so that it takes references to an event object and the "Say hello" button as arguments.
+- Change the assignment of `inputHandler` so that instead of a function reference, you call `inputHandler` with the appropriate arguments
+
+## Lab 7: More event handling
 
 We will create a version of the greeter page that doesn't need a button to activate.
 
@@ -115,6 +125,8 @@ Hello, Joh
 Hello, John
 ```
 
+You will have to refactor the arguments to `inputHandler` for this to work. Keep in mind that within the event handler, you can get a reference back to the input field via `event.target`.
+
 Load greeter.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html. 
 
 #### Improvements
@@ -123,9 +135,9 @@ Set up the event handler so that it does not render the greeting until the input
 
 Update the event handler so that it displays a default greeting ("Hello!" "Greetings to you!" or similar). When the input reaches the minimum, replace the default greeting with the customized one.
 
-## Lab 7: Rendering data to the page
+## Lab 8: Rendering data to the page
 
-New setup! Run `npm run setup begin 7` before doing anything else.
+New setup! Run `npm run setup begin 8` before doing anything else.
 
 Note that we now have something a little closer to a "site". 
 
@@ -154,9 +166,9 @@ Working in `js/list-students.js`
 <table>
 	<thead>
 		<tr>
-			<th>Column 1</th>
-			<th>Column 2</th>
-			<th>Column 3</th>
+			<th>Column Header 1</th>
+			<th>Column Header 2</th>
+			<th>Column Header 3</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -174,30 +186,28 @@ Working in `js/list-students.js`
 </table>
 ```
 
-Check to see if everything works! Load greeter.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html. 
+Check to see if everything works! Load list-students.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/list-students.html. 
 
-## Lab 8: Async
+## Lab 9: Async
 
 We will replace importing the data directly with fetching the data from a remote source.
 
 - From a command prompt, make sure that you run `npm run rest`. This will
   start a server at http://localhost:8000. You can visit that address in your
   browser to test it.
+- Do all the work below in `js/list-students.js`
 - Remove the import of "students" from the top of the file
 - Create a function `getData`. It should take an argument of a URL.
-- In `getData`, use the `fetch` command to retrieve data from the supplied
-  URL. You can assume the data will be in the right format (i.e., an array of student objects)
+- In `getData`, use the `fetch` command to retrieve data from http://localhost:8000/students. You can assume the data will be in the right format (i.e., an array of student objects)
   - You can use async/await format
   - Or Promises
 - Return the array of students/Promise of the array of students from `getData`
-- In the main part of the script, add a function called `main` and make it `async`
-- Move the code that was previously at the top level of the file inside `main`
-  - This should be the call to `buildTable` and the code to get a reference to the output div
+- Label the `main` function making it `async`
 - Either using Promises or async/await, take the return value from `getData`
   and pass it to `buildTable` from the last lab.
 - Render the table as you did before
 
-Test your code and see if it works! Load greeter.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html. 
+Check to see if everything works! Load list-students.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/list-students.html. 
 
 ## Lab 10: A full form
 
@@ -208,8 +218,6 @@ We will add a complete form to the page and grab the content from it to greet th
 We have an existing form at `add-student.html`. Take a minute to look at it now.
 
 ### JavaScript
-
-Delete code that refers to the previous `#user-name` element. 
 
 Create a `submit` event handler and attach it to the form.
 

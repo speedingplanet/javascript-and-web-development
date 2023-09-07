@@ -15,18 +15,3 @@ function clickHandler() {
 // Attach the event handler to the element, specifying the event name
 // addEventListener(eventName, eventHandlerFunction)
 button.addEventListener('click', clickHandler);
-
-// Handling the enabling/disabling of the "Say hello!" button
-
-// Event handler, needs access to the event object
-function handleInput(event) {
-	if (event.target.value.trim()) {
-		button.disabled = false;
-	} else {
-		button.disabled = true;
-	}
-}
-
-// This is duplicated in clickHandler, we should make it better
-let inputField = document.querySelector('#greet-name');
-inputField.addEventListener('input', handleInput);

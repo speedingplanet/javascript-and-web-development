@@ -4,12 +4,17 @@ import { students } from '../../data/all-data-typed';
  * @typedef { import("../../data/data.d.ts").Student } Student
  *
  * @param {Student[]} students
+ * @returns {HTMLTableElement}
  */
 function buildTable(students) {
+	// Create elements
 	let table = document.createElement('table');
 	let thead = document.createElement('thead');
 	let tbody = document.createElement('tbody');
+
+	// Set up table structure
 	table.append(thead, tbody);
+
 	thead.insertAdjacentHTML('beforeend', `
 		<tr>
 			<th>First Name</th>
@@ -34,7 +39,7 @@ function buildTable(students) {
 	return table;
 }
 
-async function main() {
+function main() {
 	let output = document.querySelector('#output');
 	let table = buildTable(students);
 	output.replaceChildren(table);

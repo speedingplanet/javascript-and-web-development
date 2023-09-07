@@ -14,44 +14,48 @@
 			rel="stylesheet"
 			href="/css/bootstrap.css"
 		/>
-		<title>Greeter</title>
+		<link
+			rel="icon"
+			href="https://mathworks.com/etc.clientlibs/mathworks/clientlibs/customer-ui/templates/common/resources/images/favicon.20230810122605597.ico"
+			type="image/x-icon"
+		/>
+		<title>Greeter (Lab 4)</title>
 	</head>
 	<body>
 		<main class="container">
 			<header class="row">
 				<div class="col">
-					<h1>Greeter Labs (Lab 4)</h1>
+					<h1>Lab 4</h1>
+					<hr />
 				</div>
 			</header>
+			<!-- .row>.col>button.btn.btn-primary -->
 			<div class="row">
 				<div class="col">
+					<!-- div>label.form-label+input#greet-name.form-control -->
 					<div>
 						<label
-							for="user-name"
+							for="greet-name"
 							class="form-label"
 						>
-							Enter your name:
+							Please enter your name:
 						</label>
 						<input
 							type="text"
-							name="user-name"
-							id="user-name"
+							id="greet-name"
 							class="form-control"
 						/>
 					</div>
+					<div class="mt-2">
+						<button
+							class="btn btn-primary"
+							id="greet-button"
+						>
+							Say hello!
+						</button>
+					</div>
 				</div>
-			</div>
-			<div class="row mt-2">
-				<div class="col">
-					<button
-						class="btn btn-primary"
-						id="btn-greet"
-					>
-						Click me
-					</button>
-				</div>
-			</div>
-			<div class="row mt-2">
+				<!-- .col>#output -->
 				<div class="col">
 					<div id="output"></div>
 				</div>

@@ -1,4 +1,19 @@
-import { students } from '../../data/all-data-typed';
+let url = 'http://localhost:8000/students';
+
+async function getData(url) {
+	try {
+		let response = await fetch(url);
+		if (response.ok) {
+			return await response.json();
+		} else {
+			throw new Error(`Unexpected status code: ${response.status}`);
+		}
+	} catch (err) {
+		console.error(err.message);
+		// Throw it downstream to any other consumers
+		throw err;
+	}
+}
 
 /**
  * @typedef { import("../../data/data.d.ts").Student } Student
@@ -7,14 +22,10 @@ import { students } from '../../data/all-data-typed';
  * @returns {HTMLTableElement}
  */
 function buildTable(students) {
-	// Create elements
 	let table = document.createElement('table');
 	let thead = document.createElement('thead');
 	let tbody = document.createElement('tbody');
-
-	// Set up table structure
 	table.append(thead, tbody);
-
 	thead.insertAdjacentHTML('beforeend', `
 		<tr>
 			<th>First Name</th>
@@ -39,8 +50,9 @@ function buildTable(students) {
 	return table;
 }
 
-function main() {
+async function main() {
 	let output = document.querySelector('#output');
+	let students = await getData(url);
 	let table = buildTable(students);
 	output.replaceChildren(table);
 }
