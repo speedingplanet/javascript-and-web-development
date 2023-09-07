@@ -23,10 +23,9 @@
 			}
 
 			.btn-warning:disabled {
-				color: black
+				color: black;
 			}
 		</style>
-
 	</head>
 	<body>
 		<main class="container">
@@ -134,12 +133,10 @@
 				// console.log('Event:', event);
 				let clickMeButton = document.querySelector('.btn-warning');
 				clickMeButton.disabled = Number(event.target.value);
-				clickMeButton.classList.add('your-class-here');
 			};
 
 			singleDisableRadio.addEventListener('click', singleHandler);
 			singleEnableRadio.addEventListener('click', singleHandler);
-
 		</script>
 	</body>
 </html>
