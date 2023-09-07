@@ -222,6 +222,7 @@ We will replace importing the data directly with fetching the data from a remote
 - Label the `main` function making it `async`
 - Either using Promises or async/await, take the return value from `getData`
   and pass it to `buildTable` from the last lab.
+- Don't forget to invoke `main` as well!
 - Render the table as you did before
 
 Check to see if everything works! Load list-students.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/list-students.html.
