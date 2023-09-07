@@ -7,11 +7,25 @@ const empty = '';
 const booleanFalse = false;
 const notANumber = NaN;
 
-/*
-if (condition) { doSomething(); }
-if () {} else {}
-if () {} else if () {} else if () {} else {}
-*/
+let y = 10;
+
+if (y < 5) {
+	// Do something
+}
+
+if (y < 5) {
+	// Do something
+} else {
+	// Do something else
+}
+
+if (y < 5) {
+	// Do something
+} else if (y > 5) {
+	// Do something else
+} else {
+	// Do a final thing
+}
 
 let someVariable = 'baz';
 
