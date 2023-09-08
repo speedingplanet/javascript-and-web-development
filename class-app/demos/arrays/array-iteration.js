@@ -78,6 +78,8 @@ const statesThatStartWithC = states.filter((state) => state.startsWith('C'));
 // Find only the first match for a predicate
 const firstStateWithN = states.find((state) => state.includes('N'));
 
+const firstStateWithNPosition = states.findIndex((state) => state.includes('N'));
+
 // Array.prototype.reduce((lastValue, nextItem, index?, array?) => nextValue, startingValue?) => finalValue
 // Process every item in an array, generating a value based on that processing
 // The argument function is referred to as an accumulator
