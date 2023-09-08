@@ -1,30 +1,18 @@
 /**
+ * TYPEDEFS
  *
- * @param {Event} event
- * @param {string} url
- * @param {HTMLElement} outputDiv
+ * @typedef { import("../../data/data.d.ts").Student } Student
  */
-async function handleSubmit(event, url, outputDiv) {
-	event.preventDefault();
-	let formData = new FormData(event.target);
-	let newStudent = {};
-	for (let [key, value] of formData) {
-		newStudent[key] = value;
-	}
-
-	let results = await addStudent(url);
-	displayResults(outputDiv, results);
-}
 
 /**
  *
- * @typedef { import("../../data/data.d.ts").Student } Student
+ * addStudent
  *
  * @param {string} url
  *
  * Partial<> because our Student doesn't have all their data
  * and specifically doesn't have an ID
- * @param {Partial<Student>} Student
+ * @param {Partial<Student>} student
  *
  * @returns {Partial<Student>}
  */
@@ -48,11 +36,34 @@ async function addStudent(url, student) {
 
 /**
  *
+ * handleSubmit
+ *
+ * @param {Event} event
+ * @param {string} url
+ * @param {HTMLElement} outputDiv
+ */
+async function handleSubmit(event, url, outputDiv) {
+	event.preventDefault();
+	let formData = new FormData(event.target);
+	let newStudent = {};
+	for (let [key, value] of formData) {
+		newStudent[key] = value;
+	}
+
+	let results = await addStudent(url, newStudent);
+	event.target.reset();
+	displayResults(outputDiv, results);
+}
+
+/**
+ *
+ * displayResults
+ *
  * @param {HTMLElement} outputDiv
  * @param {Partial<Student>} student
  */
 function displayResults(outputDiv, student) {
-	let message = `Added ${student.firstName}, ${student.lastName} as student #${student.id}`;
+	let message = `Added "${student.firstName} ${student.lastName}" as student #${student.id}`;
 	let p = document.createElement('p');
 	p.textContent = message;
 	outputDiv.replaceChildren(p);

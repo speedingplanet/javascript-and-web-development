@@ -16,7 +16,7 @@ Load greeter.html into your browser to see if it works. If you've started the de
 
 ## Lab 2: Improvements and modules
 
-Take the code in the in-line `script` block and move it to its own file: `greeter.js`.  
+Take the code in the in-line `script` block and move it to its own file: `greeter.js`.
 
 Reference the JavaScript file from the HTML file. Be sure to reference `greeter.js` as a module, not just a plain JavaScript file.
 
@@ -34,23 +34,23 @@ You can replace everything within the `body` (but **not** the `script` tag) with
 ```html
 <!-- Emmet: main.container>header.row>.col>h1 -->
 <main class="container">
-  <header class="row">
-    <div class="col">
-      <h1>Greeter Labs</h1>
-    </div>
-  </header>
-  <!-- Emmet: .row>.col>button.btn.btn-primary -->
-  <div class="row">
-    <div class="col"><button class="btn btn-primary">Click me</button></div>
-  </div>
-  <!-- Emmet: .row>.col>#output -->
-  <div class="row">
-    <div class="col">
-      <div id="output">
-        <!-- Your output content goes here -->
-      </div>
-    </div>
-  </div>
+	<header class="row">
+		<div class="col">
+			<h1>Greeter Labs</h1>
+		</div>
+	</header>
+	<!-- Emmet: .row>.col>button.btn.btn-primary -->
+	<div class="row">
+		<div class="col"><button class="btn btn-primary">Click me</button></div>
+	</div>
+	<!-- Emmet: .row>.col>#output -->
+	<div class="row">
+		<div class="col">
+			<div id="output">
+				<!-- Your output content goes here -->
+			</div>
+		</div>
+	</div>
 </main>
 ```
 
@@ -62,7 +62,7 @@ In your JavaScript file, comment out the code that greets you by name. Hook up a
 
 You are, in essence, taking the code from the last exercise, and instead of running it when the page loads, running it when the user clicks on a button.
 
-Load `greeter.html` into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html. 
+Load `greeter.html` into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html.
 
 ## Lab 4: Form input
 
@@ -75,8 +75,18 @@ Add a single-line text field to your HTML file. Bootstrap has lots of informatio
 ```html
 <!-- Emmet: div>label.form-label+input:text.form-control#user-name -->
 <div>
-  <label for="user-name" class="form-label">Enter your name:</label>
-  <input type="text" name="user-name" id="user-name" class="form-control" />
+	<label
+		for="user-name"
+		class="form-label"
+	>
+		Enter your name:
+	</label>
+	<input
+		type="text"
+		name="user-name"
+		id="user-name"
+		class="form-control"
+	/>
 </div>
 ```
 
@@ -90,9 +100,9 @@ Our button should only be enabled when there is content in the form field.
 
 In `greeter.js` add an event listener to the form field. (What's the name of the event we should use?) It should check the form field's value to see if there is any content there. If there is not, the button should be disabled. If there is, the button should be enabled.
 
-Hint: The `value` property of the form field is a String. Strings have a `length` property. Is the `length` property present? Is it greater than 0? What's the best condition to use here?  
+Hint: The `value` property of the form field is a String. Strings have a `length` property. Is the `length` property present? Is it greater than 0? What's the best condition to use here?
 
-Load greeter.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html. 
+Load greeter.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html.
 
 ## Lab 6: Improve for testing
 
@@ -114,7 +124,7 @@ Delete or comment out the button in the HTML.
 
 ### JavaScript
 
-Comment out or delete all code which refers to the button. 
+Comment out or delete all code which refers to the button.
 
 If you haven't already, add an event handler to the input field. When the user enters input, update the greeting with the input. That is, as the user types, the greeting reflects what the user is typing:
 
@@ -127,7 +137,7 @@ Hello, John
 
 You will have to refactor the arguments to `inputHandler` for this to work. Keep in mind that within the event handler, you can get a reference back to the input field via `event.target`.
 
-Load greeter.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html. 
+Load greeter.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html.
 
 #### Improvements
 
@@ -139,16 +149,16 @@ Update the event handler so that it displays a default greeting ("Hello!" "Greet
 
 New setup! Run `npm run setup begin 8` before doing anything else.
 
-Note that we now have something a little closer to a "site". 
+Note that we now have something a little closer to a "site".
 
-We are going to render a list of students in `list-students.html`. The HTML is already set up for you, in `list-students.html`. The critical tag to pay attention to is the `div` with the id "output". 
+We are going to render a list of students in `list-students.html`. The HTML is already set up for you, in `list-students.html`. The critical tag to pay attention to is the `div` with the id "output".
 
 ### JavaScript
 
 Working in `js/list-students.js`
 
 - Import `students` from `../../data/all-data-typed.js`
-- Write a function `buildTable`: 
+- Write a function `buildTable`:
   - It should take an argument of an array of students to render
   - It should return a HTML table where each row consists of
     - First Name
@@ -186,7 +196,7 @@ Working in `js/list-students.js`
 </table>
 ```
 
-Check to see if everything works! Load list-students.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/list-students.html. 
+Check to see if everything works! Load list-students.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/list-students.html.
 
 ## Lab 9: Async
 
@@ -207,11 +217,11 @@ We will replace importing the data directly with fetching the data from a remote
   and pass it to `buildTable` from the last lab.
 - Render the table as you did before
 
-Check to see if everything works! Load list-students.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/list-students.html. 
+Check to see if everything works! Load list-students.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/list-students.html.
 
 ## Lab 10: A full form
 
-We will add a complete form to the page and grab the content from it to greet the user.
+We will add a complete form to the page and grab the content from it to add a new student.
 
 ### HTML
 
@@ -219,12 +229,34 @@ We have an existing form at `add-student.html`. Take a minute to look at it now.
 
 ### JavaScript
 
-Create a `submit` event handler and attach it to the form.
+You will create three functions: `addStudent`, `handleSubmit`, and `displayResults`. You will also make a minor update to `main`
+
+#### `addStudent`
+
+- Use `async/await` or Promises
+- Passed a URL and a student object
+- Configure a `fetch` call to send the student to the appropriate URL
+  - Use the POST method
+  - Set the Content-Type header correctly
+  - Send the student as the body of the request
+- If the response is acceptable, get the results and return them
+- Otherwise send an error to the console
+
+#### `handleSubmit`
+
+The event handler for a form submission
 
 - Turn off the default behavior (we don't actually want to submit the form)
 - Capture the data from the form using a `FormData` object
-- Use the data in the `FormData` object to build the greeting
-- Render the greeting as usual
+- Use the data in the `FormData` object to build a student object
+- Call `addStudent` passing it the student (and a URL!)
+- Clear the form's contents
+- Call `displayResults` with the results from `addStudent`
 
-Load greeter.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html. 
+#### `displayResults`
 
+Display a message in the div with the ID "output". The message should indicate that the student was added successfully. It should include at least the student's first and last names, as well as the ID generated by the API call.
+
+#### `main`
+
+Already written for you, mostly. You'll need to attach the `handleSubmit` event handler.
