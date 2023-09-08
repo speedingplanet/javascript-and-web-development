@@ -1,20 +1,4 @@
-let url = 'http://localhost:8000/students';
-
-async function getData(url) {
-	try {
-		let response = await fetch(url);
-		if (response.ok) {
-			return await response.json();
-		} else {
-			throw new Error(`Unexpected status code: ${response.status}`);
-		}
-	} catch (err) {
-		console.error(err.message);
-		// Throw it downstream to any other consumers
-		throw err;
-	}
-}
-
+/* eslint-disable no-unused-vars */
 /**
  * @typedef { import("../../data/data.d.ts").Student } Student
  *
@@ -22,10 +6,14 @@ async function getData(url) {
  * @returns {HTMLTableElement}
  */
 function buildTable(students) {
+	// Create elements
 	let table = document.createElement('table');
 	let thead = document.createElement('thead');
 	let tbody = document.createElement('tbody');
+
+	// Set up table structure
 	table.append(thead, tbody);
+
 	thead.insertAdjacentHTML('beforeend', `
 		<tr>
 			<th>First Name</th>
@@ -50,11 +38,74 @@ function buildTable(students) {
 	return table;
 }
 
-async function main() {
-	let output = document.querySelector('#output');
-	let students = await getData(url);
-	let table = buildTable(students);
-	output.replaceChildren(table);
+/**
+ *
+ * getData()
+ *
+ * @param {string} url
+ * @returns {Student[]}
+ *
+ */
+async function getData(url) {
+	try {
+		let response = await fetch(url);
+		if (response.ok) {
+			// Successful request, good response
+			let results = await response.json();
+			return results;
+		} else {
+			// Some sort of bad response, status code >=400
+			throw new Error(`Bad response: ${response.status} [${response.statusText}]`);
+		}
+	} catch (error) {
+		console.error('Unable to fetch students because ', error);
+
+		// Hand the error to the caller, either as-is or repackaged
+		// throw new Error('getData failed');
+		throw error;
+	}
 }
 
-main();
+function getDataAsPromise(url) {
+	return fetch(url)
+		.then(response => {
+			if (response.ok) {
+			// Successful request, good response
+				return response.json();
+			} else {
+			// Some sort of bad response, status code >=400
+				throw new Error(`Bad response: ${response.status} [${response.statusText}]`);
+			}
+		})
+		.catch(error => {
+			console.error('Unable to fetch students because ', error);
+			throw error;
+		});
+}
+
+async function main() {
+	let output = document.querySelector('#output');
+	try {
+		let students = await getData('http://localhost:8000/students');
+		let table = buildTable(students);
+		output.replaceChildren(table);
+	} catch (error) {
+		console.error('main(): Error fetching data');
+	}
+}
+
+function mainWithPromises() {
+	let output = document.querySelector('#output');
+
+	getDataAsPromise('http://localhost:8000/students')
+		.then(students => {
+			let table = buildTable(students);
+			output.replaceChildren(table);
+		})
+		.catch(error => {
+			console.error('main(): Error fetching data:', error);
+		});
+}
+
+// main();
+mainWithPromises();
