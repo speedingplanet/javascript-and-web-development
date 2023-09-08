@@ -5,12 +5,16 @@ form.addEventListener('submit', (event) => {
 
 	let formDataObject = new FormData(form);
 
+	let person = {};
 	// FormData as iterable
+	// ['firstName', 'Peter']
+	// ['lastName', 'Parker']
 	for (let keyValuePair of formDataObject) {
 		let key = keyValuePair[0];
 		let value = keyValuePair[1];
 
 		console.log(`The field ${key} is set to "${value}".`);
+		person[key] = value;
 	}
 
 	// Keys only
@@ -22,4 +26,8 @@ form.addEventListener('submit', (event) => {
 	for (let value of formDataObject.values()) {
 		console.log('Values only:', value);
 	}
+
+	// Object from entries
+	let examplePerson = Object.fromEntries(formDataObject);
+	console.log('Using fromEntries():', examplePerson);
 });
