@@ -8,7 +8,8 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"rest": "json-server --port 8000 data/all-data.json",
-		"setup": "node scripts/setup.js"
+		"setup": "node scripts/setup.js",
+		"test": "qunit"
 	},
 	"devDependencies": {
 		"@speedingplanet/eslint-config": "^0.0.2",
