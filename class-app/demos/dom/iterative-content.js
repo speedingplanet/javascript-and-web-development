@@ -1,4 +1,4 @@
-import { movies } from '../../data/movies-module.js';
+import { movies } from '../../data/all-data-typed';
 
 // Efficient, somewhat verbose
 function useCreateElement() {
