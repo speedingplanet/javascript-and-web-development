@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // primitive string
 
 let primitive1 = 'Hello';
