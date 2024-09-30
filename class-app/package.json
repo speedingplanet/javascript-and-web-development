@@ -13,12 +13,9 @@
 	},
 	"devDependencies": {
 		"@speedingplanet/eslint-config": "^0.0.2",
-		"eslint": "^8.40.0",
 		"json-server": "^0.17.3",
-		"karma": "^6.4.2",
 		"karma-chrome-launcher": "^3.2.0",
 		"karma-mocha-reporter": "^2.2.5",
-		"karma-qunit": "^4.1.2",
 		"prettier": "^2.8.8",
 		"qunit": "^2.19.4",
 		"vite": "^4.3.2",
