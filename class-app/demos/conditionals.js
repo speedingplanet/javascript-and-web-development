@@ -1,5 +1,5 @@
 /* eslint-disable */
-// False values
+// Falsy values
 const undef = undefined;
 const nullValue = null;
 const x = 0;
