@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars, n/handle-callback-err, prefer-promise-reject-errors */
+/* eslint-disable no-unused-vars */
 function generateAPromiseThat(result) {
 	return new Promise((resolve, reject) => {
 		if (result === true || result === 'succeeds') {
@@ -28,10 +28,8 @@ initialPromise
 	.catch((error) => console.log(`Chained fail: ${error}`));
 
 // Standalone
-generateAPromiseThat('fails')
-	.catch((error) => console.error('Something went wrong'));
-generateAPromiseThat('succeeds')
-	.then((result) => console.log('Only a success callback'));
+generateAPromiseThat('fails').catch((error) => console.error('Something went wrong'));
+generateAPromiseThat('succeeds').then((result) => console.log('Only a success callback'));
 
 let chainedResultsPromise = generateAPromiseThat(true);
 

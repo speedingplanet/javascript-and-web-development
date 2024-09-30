@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 // Standard export
 export const x = 10;
 

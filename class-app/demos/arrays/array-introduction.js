@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars, array-element-newline, newline-per-chained-call */
+/* eslint-disable no-unused-vars */
 
 // ============================================================================
 // Declaring arrays
@@ -145,5 +145,5 @@ const people = [
  *
  * String.prototype.localeCompare() does this for us
  *
-*/
+ */
 people.sort((p1, p2) => p1.lastName.localeCompare(p2.lastName));

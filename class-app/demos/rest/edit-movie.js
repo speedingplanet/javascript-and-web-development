@@ -26,9 +26,7 @@ function handleSubmit(event) {
 	let formData = new FormData(event.target);
 
 	// array destructuring
-	for (let [
-		key, value,
-	] of formData) {
+	for (let [key, value] of formData) {
 		if (key === 'rating' || key === 'year') {
 			movieData[key] = Number(value);
 		} else if (key === 'genres' || key === 'writer') {

@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars, no-unused-expressions */
+/* eslint-disable no-unused-vars */
 const person = {
 	firstName: 'John',
 	lastName: 'Paxton',
@@ -22,10 +22,9 @@ const values = Object.values(person);
 // entries [[key1, value1], [key2, value2]]
 const entries = Object.entries(person);
 
-Object.keys(person)
-	.forEach((key) => {
-		console.log(`${key}: ${person[key]}`);
-	});
+Object.keys(person).forEach((key) => {
+	console.log(`${key}: ${person[key]}`);
+});
 
 // Object.keys() equivalent
 for (const key in person) {
@@ -36,7 +35,6 @@ for (const key in person) {
 // configurable: can we call defineProperty() on this key?
 // writeable: can this value be changed?
 
-// eslint-disable-next-line max-len
 // More here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty#description
 
 Object.keys(person)

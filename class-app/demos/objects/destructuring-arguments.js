@@ -15,9 +15,7 @@ function createForm(config) {
 	};
 }
 
-function createForm2({
-	primaryClass, accentClass, fields, ...foo
-}) {
+function createForm2({ primaryClass, accentClass, fields, ...foo }) {
 	// Whatever
 	console.log('Primary class is ', primaryClass);
 }

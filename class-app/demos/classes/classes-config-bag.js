@@ -4,8 +4,9 @@ class Car {
 	model = '';
 
 	// Private members
-	#odometer = 0;
 	#speed = 0;
+	// eslint-disable-next-line no-unused-private-class-members
+	#odometer = 0;
 
 	constructor(config = {}) {
 		// Could move this out of the class so it's not always re-declared:

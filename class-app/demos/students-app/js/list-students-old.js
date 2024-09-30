@@ -3,25 +3,31 @@ function buildTable(students) {
 	let tbody = document.createElement('tbody');
 	let thead = document.createElement('thead');
 
-	thead.insertAdjacentHTML('beforeend', `
+	thead.insertAdjacentHTML(
+		'beforeend',
+		`
 	<tr>
 		<th>First Name</th>
 		<th>Last Name</th>
 		<th>City</th>
 		<th>Province</th>
 	</tr>
-	`);
+	`
+	);
 
 	table.classList.add('table', 'table-striped', 'table-hover');
 
 	for (let student of students) {
 		let tableRow = document.createElement('tr');
-		tableRow.insertAdjacentHTML('beforeend', `
+		tableRow.insertAdjacentHTML(
+			'beforeend',
+			`
 			<td>${student.firstName}</td>
 			<td>${student.lastName}</td>
 			<td style="width:25%">${student.city}</td>
 			<td>${student.province}</td>
-		`);
+		`
+		);
 
 		tbody.appendChild(tableRow);
 		/*
@@ -52,8 +58,7 @@ async function getData(url) {
 async function main() {
 	let students = await getData('http://localhost:8000/students');
 	let table = buildTable(students);
-	document.querySelector('#output')
-		?.replaceChildren(table);
+	document.querySelector('#output')?.replaceChildren(table);
 }
 
 main();

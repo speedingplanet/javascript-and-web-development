@@ -1,8 +1,7 @@
 let movieForm = document.querySelector('#movie-form');
 let list = document.createElement('ul');
 let clearButton = document.querySelector('#clear-movies-button');
-document.querySelector('#output')
-	.append(list);
+document.querySelector('#output').append(list);
 let movies = [];
 
 document.addEventListener('DOMContentLoaded', () => {

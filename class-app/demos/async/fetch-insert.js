@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 let baseUrl = 'http://localhost:8000/movies';
 
 async function getMovies(url) {

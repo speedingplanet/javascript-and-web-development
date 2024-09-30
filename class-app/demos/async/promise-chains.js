@@ -1,4 +1,3 @@
-
 /*
 function handleClick(event) {
 	console.log('The object that emitted the event:', event.target);
@@ -46,15 +45,16 @@ p3.then(
 	}
 );
 
-origin.then((chain1) => {
-	// chain1 should be 10
-	return chain1 + 1;
-})
-	.then(chain2 => {
-	// chain2 should be 11
+origin
+	.then((chain1) => {
+		// chain1 should be 10
+		return chain1 + 1;
+	})
+	.then((chain2) => {
+		// chain2 should be 11
 		return chain2 + 1;
 	})
-	.then(chain3 => {
-	// chain3 should be 12
+	.then((chain3) => {
+		// chain3 should be 12
 		return chain3 + 1;
 	});

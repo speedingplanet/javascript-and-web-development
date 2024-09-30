@@ -525,23 +525,14 @@ export const movies = [
 		title: 'Raiders of the Lost Ark',
 		year: 1981,
 		rating: 5,
-		genres: [
-			'action',
-			'adventure',
-			'supernatural',
-		],
+		genres: ['action', 'adventure', 'supernatural'],
 	},
 	{
 		id: 2,
 		title: 'Heat',
 		year: 1995,
 		rating: 5,
-		genres: [
-			'crime',
-			'police',
-			'drama',
-			'action',
-		],
+		genres: ['crime', 'police', 'drama', 'action'],
 	},
 	{
 		id: 3,
@@ -562,23 +553,14 @@ export const movies = [
 		title: 'Casino Royale',
 		year: 2006,
 		rating: 4,
-		genres: [
-			'bond',
-			'spy',
-			'action',
-		],
+		genres: ['bond', 'spy', 'action'],
 	},
 	{
 		id: 6,
 		title: 'Spirited Away',
 		year: 2001,
 		rating: 5,
-		genres: [
-			'anime',
-			'fantasy',
-			'family',
-			'mystery',
-		],
+		genres: ['anime', 'fantasy', 'family', 'mystery'],
 	},
 	/*
 	{
@@ -924,9 +906,9 @@ export const students = [
 	},
 	{
 		firstName: 'Charlie',
-		lastName: 'O\'Reilly',
+		lastName: "O'Reilly",
 		dateOfBirth: '1999-02-03',
-		email: 'Charlie_O\'Reilly@bt.co.uk',
+		email: "Charlie_O'Reilly@bt.co.uk",
 		phoneNumber: '(214) 333-9931',
 		city: 'Glencoe',
 		province: 'OH',

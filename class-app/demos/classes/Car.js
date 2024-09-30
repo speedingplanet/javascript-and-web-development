@@ -7,9 +7,7 @@ const defaultConfig = {
 
 export class Car extends Vehicle {
 	constructor(config = {}) {
-		const {
-			make, model, ...instance
-		} = config;
+		const { make, model, ...instance } = config;
 		super({
 			make,
 			model,

@@ -94,11 +94,13 @@ getAllParameters(1, 2, 3);
 getAllParameters('John', 30, true, ['a', 'b', 'c']);
 
 // config bag pattern in JS
-function addValues(config = {
-	a: 0,
-	b: 0,
-	c: 0,
-}) {
+function addValues(
+	config = {
+		a: 0,
+		b: 0,
+		c: 0,
+	}
+) {
 	return config.a + config.b + config.c;
 }
 

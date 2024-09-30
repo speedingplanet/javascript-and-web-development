@@ -23,11 +23,19 @@ let defaultFilters = [
 	'.vite',
 ];
 
-let filterList = ['.eslintrc.json', '.prettierrc.json', 'babel.config.json', '.vscode', ...defaultFilters];
+let filterList = [
+	'.eslintrc.json',
+	'.prettierrc.json',
+	'babel.config.json',
+	'.vscode',
+	...defaultFilters,
+];
 
 export default defineConfig({
-	plugins: [directoryPlugin({
-		baseDir: __dirname,
-		filterList,
-	})],
+	plugins: [
+		directoryPlugin({
+			baseDir: __dirname,
+			filterList,
+		}),
+	],
 });

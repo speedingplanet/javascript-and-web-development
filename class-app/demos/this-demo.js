@@ -1,7 +1,5 @@
-/* eslint-disable array-callback-return */
 /* eslint-disable no-unused-vars */
 // Concept demo
-// eslint-disable-next-line no-unused-vars
 let object = {
 	x: 10,
 	foo() {
@@ -73,53 +71,45 @@ class PeopleManager {
 let dao = {
 	fetchPerson() {
 		console.log('fetchPerson');
-		fetch('http://localhost:8000/api/zippay/v1/users/205')
-			.then(function (response) {
-				if (response.ok) {
-					response.json()
-						.then(function (person) {
-							console.log(`Fetched user ${person.displayName}`);
-						});
-				}
-			});
+		fetch('http://localhost:8000/api/zippay/v1/users/205').then(function (response) {
+			if (response.ok) {
+				response.json().then(function (person) {
+					console.log(`Fetched user ${person.displayName}`);
+				});
+			}
+		});
 	},
 	fetchPersonArrow() {
 		console.log('fetchPersonArrow');
-		fetch('http://localhost:8000/api/zippay/v1/users/205')
-			.then((response) => {
-				if (response.ok) {
-					response.json()
-						.then((person) => this.renderPerson(person));
-				}
-			});
+		fetch('http://localhost:8000/api/zippay/v1/users/205').then((response) => {
+			if (response.ok) {
+				response.json().then((person) => this.renderPerson(person));
+			}
+		});
 	},
 	fetchPersonArrowAndFunction() {
 		console.log('fetchPersonArrow');
-		fetch('http://localhost:8000/api/zippay/v1/users/205')
-			.then(function (response) {
-				if (response.ok) {
-					response.json()
-						.then((person) => this.renderPerson(person));
-				}
-			});
+		fetch('http://localhost:8000/api/zippay/v1/users/205').then(function (response) {
+			if (response.ok) {
+				response.json().then((person) => this.renderPerson(person));
+			}
+		});
 	},
 	fetchPersonThenRender() {
 		console.log('fetchPersonThenRender');
 		let outerThis = this;
 		// let self = this;
 
-		fetch('http://localhost:8000/api/zippay/v1/users/205')
-			.then(function (response) {
-				if (response.ok) {
-					response.json()
-						.then(function (person) {
-							let innerThis = this;
-							console.log(outerThis === innerThis);
-							this.renderPerson(person);
-							// self.renderPerson(person);
-						});
-				}
-			});
+		fetch('http://localhost:8000/api/zippay/v1/users/205').then(function (response) {
+			if (response.ok) {
+				response.json().then(function (person) {
+					let innerThis = this;
+					console.log(outerThis === innerThis);
+					this.renderPerson(person);
+					// self.renderPerson(person);
+				});
+			}
+		});
 	},
 	renderPerson(person) {
 		console.log(`Fetched user ${person.displayName}`);
