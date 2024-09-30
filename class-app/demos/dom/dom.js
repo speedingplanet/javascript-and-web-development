@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 // How do I access elements?
 document.getElementById(/* some id in the document */); // Element;
 

@@ -1,5 +1,4 @@
-/* eslint-disable no-var */
-/* eslint-disable prefer-const, no-unused-vars */
+/* eslint-disable no-unused-vars */
 
 // let|const variableName = someValue;
 // let x;
@@ -20,7 +19,6 @@ const c = 30;
 // This will fail
 // c = 40;
 
-// eslint-disable-next-line no-lone-blocks
 {
 	let d = 'some value d';
 	const e = 'some value e';
@@ -32,7 +30,6 @@ const c = 30;
 // This will fail
 // console.log('Outside block d:', d, 'e:', e);
 
-// eslint-disable-next-line no-lone-blocks
 {
 	var f = 'some value f';
 }
@@ -52,7 +49,6 @@ function varScope() {
 const aString = 'string';
 
 // prettier-ignore
-// eslint-disable-next-line
 const aDoubleQuotedString = "double-quoted string";
 
 // Backticks allow multi-line strings
@@ -119,7 +115,6 @@ aFunction(1, 2);
 
 const aRegularExpression = /[0-9]+/;
 
-// eslint-disable-next-line prefer-regex-literals
 const anotherRegExp = new RegExp('[0-9]+');
 
 const today = new Date();

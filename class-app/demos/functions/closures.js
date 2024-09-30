@@ -56,6 +56,7 @@ console.log(`x is currently ${outerX}`);
 
 class Visibility {
 	x = 10;
+	// eslint-disable-next-line no-unused-private-class-members
 	#y = 20;
 }
 

@@ -21,7 +21,6 @@ function loopedEvents() {
 
 	for (let itemCounter = 0; itemCounter < listItems.length; itemCounter++) {
 		listItems[itemCounter].addEventListener('click', () =>
-		// eslint-disable-next-line comma-dangle
 			console.log(`You clicked on looped/${itemCounter + 1}`)
 		);
 	}

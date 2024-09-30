@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars, newline-per-chained-call */
+/* eslint-disable no-unused-vars */
 
 const states = ['NJ', 'MA', 'CA', 'IL', 'FL', 'CT', 'ME'];
 

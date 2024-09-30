@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 // Classic loops and some newer versions
 
 const states = ['NJ', 'MA', 'CA', 'IL', 'FL'];

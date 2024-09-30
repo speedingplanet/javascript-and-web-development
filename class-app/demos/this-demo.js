@@ -1,7 +1,5 @@
-/* eslint-disable array-callback-return */
 /* eslint-disable no-unused-vars */
 // Concept demo
-// eslint-disable-next-line no-unused-vars
 let object = {
 	x: 10,
 	foo() {

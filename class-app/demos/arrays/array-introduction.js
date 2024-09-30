@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars, array-element-newline, newline-per-chained-call */
+/* eslint-disable no-unused-vars */
 
 // ============================================================================
 // Declaring arrays

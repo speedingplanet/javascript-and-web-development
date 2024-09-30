@@ -3,7 +3,6 @@ import axios from 'axios';
 let url = 'http://api.open-notify.org/astros.json';
 
 // Assumes Axios is globallay available
-// eslint-disable-next-line no-undef
 axios.get(url)
 	.then((response) => {
 		// response includes response.data

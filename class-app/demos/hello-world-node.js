@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars, prefer-const, no-var */
+/* eslint-disable no-unused-vars */
 console.log('Hello, MathWorkers!');
 
 // Variables
