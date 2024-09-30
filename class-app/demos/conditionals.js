@@ -30,15 +30,15 @@ if (y < 5) {
 let someVariable = 'baz';
 
 switch (someVariable) {
-  case 'foo': // if (someVariable === 'foo') {}
-    console.log('Matched "foo"!');
-    break;
-  case 'bar':
-    console.log('Matched "bar"!');
-    break;
-  case 'baz':
-    console.log('Matched "baz"!');
-    break;
-  default:
-    console.log('No matches!');
+	case 'foo': // if (someVariable === 'foo') {}
+		console.log('Matched "foo"!');
+		break;
+	case 'bar':
+		console.log('Matched "bar"!');
+		break;
+	case 'baz':
+		console.log('Matched "baz"!');
+		break;
+	default:
+		console.log('No matches!');
 }

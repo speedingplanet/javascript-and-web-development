@@ -36,7 +36,7 @@ console.log(`My car's engine is a ${civic.engine}.`);
 let otherCar = new Car('Ford', 'F-150');
 console.log(`My other car's engine is a ${otherCar.engine}.`);
 
-console.log('Changing the Civic\'s engine...');
+console.log("Changing the Civic's engine...");
 civic.engine = 'V6';
 console.log(`My ${civic}'s engine is a ${civic.engine}.`);
 console.log(`My ${otherCar}'s engine is a ${otherCar.engine}.`);

@@ -28,10 +28,8 @@ initialPromise
 	.catch((error) => console.log(`Chained fail: ${error}`));
 
 // Standalone
-generateAPromiseThat('fails')
-	.catch((error) => console.error('Something went wrong'));
-generateAPromiseThat('succeeds')
-	.then((result) => console.log('Only a success callback'));
+generateAPromiseThat('fails').catch((error) => console.error('Something went wrong'));
+generateAPromiseThat('succeeds').then((result) => console.log('Only a success callback'));
 
 let chainedResultsPromise = generateAPromiseThat(true);
 

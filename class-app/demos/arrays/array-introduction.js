@@ -145,5 +145,5 @@ const people = [
  *
  * String.prototype.localeCompare() does this for us
  *
-*/
+ */
 people.sort((p1, p2) => p1.lastName.localeCompare(p2.lastName));

@@ -2,7 +2,7 @@
 
 ## Lab 1: Warm-up
 
-From a command prompt, run `npm run setup begin 1`. 
+From a command prompt, run `npm run setup begin 1`.
 
 In the `labs` folder, open `greeter.html`.  
 Add a `div` with an id that you can remember, like `output`.

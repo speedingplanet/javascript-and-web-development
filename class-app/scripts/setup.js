@@ -94,7 +94,7 @@ async function save(labNumber, beginFinish) {
 		__dirname,
 		labsParentPrefix,
 		beginFinish === 'begin' ? beginFolderName : finishedFolderName,
-		labDir,
+		labDir
 	);
 	let labsFrom = path.resolve(__dirname, labsLocalPrefix);
 	try {

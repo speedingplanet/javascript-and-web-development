@@ -12,6 +12,4 @@ function multiply(x, y) {
 }
 
 // export list
-export {
-	subtract, multiply
-};
+export { subtract, multiply };

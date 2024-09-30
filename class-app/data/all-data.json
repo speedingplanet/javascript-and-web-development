@@ -551,66 +551,42 @@
 			"title": "Raiders of the Lost Ark",
 			"year": 1981,
 			"rating": 5,
-			"genres": [
-				"action",
-				"adventure",
-				"supernatural"
-			]
+			"genres": ["action", "adventure", "supernatural"]
 		},
 		{
 			"id": 2,
 			"title": "Heat",
 			"year": 1995,
 			"rating": 5,
-			"genres": [
-				"crime",
-				"police",
-				"drama",
-				"action"
-			]
+			"genres": ["crime", "police", "drama", "action"]
 		},
 		{
 			"id": 3,
 			"title": "Mad Max: Fury Road",
 			"year": 2015,
 			"rating": 4,
-			"genres": [
-				"action",
-				"post-apocalypse"
-			]
+			"genres": ["action", "post-apocalypse"]
 		},
 		{
 			"id": 4,
 			"title": "Scott Pilgrim vs. the World",
 			"year": 2010,
 			"rating": 4,
-			"genres": [
-				"comedy",
-				"music"
-			]
+			"genres": ["comedy", "music"]
 		},
 		{
 			"id": 5,
 			"title": "Casino Royale",
 			"year": 2006,
 			"rating": 4,
-			"genres": [
-				"bond",
-				"spy",
-				"action"
-			]
+			"genres": ["bond", "spy", "action"]
 		},
 		{
 			"id": 6,
 			"title": "Spirited Away",
 			"year": 2001,
 			"rating": 5,
-			"genres": [
-				"anime",
-				"fantasy",
-				"family",
-				"mystery"
-			]
+			"genres": ["anime", "fantasy", "family", "mystery"]
 		}
 	],
 	"moviesCastAndCrew": [

@@ -22,10 +22,9 @@ const values = Object.values(person);
 // entries [[key1, value1], [key2, value2]]
 const entries = Object.entries(person);
 
-Object.keys(person)
-	.forEach((key) => {
-		console.log(`${key}: ${person[key]}`);
-	});
+Object.keys(person).forEach((key) => {
+	console.log(`${key}: ${person[key]}`);
+});
 
 // Object.keys() equivalent
 for (const key in person) {

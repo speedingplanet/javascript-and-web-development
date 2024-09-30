@@ -73,7 +73,7 @@ export interface MoviePerson extends Person {
 	id: number;
 }
 
-type JobText = 	'ACTOR' | 'DIRECTOR' | 'WRITER' | 'CINEMATOGRAPHER' | 'PRODUCER';
+type JobText = 'ACTOR' | 'DIRECTOR' | 'WRITER' | 'CINEMATOGRAPHER' | 'PRODUCER';
 export type Job = Record<JobText, JobText>;
 
 export interface MoviesCastAndCrew {

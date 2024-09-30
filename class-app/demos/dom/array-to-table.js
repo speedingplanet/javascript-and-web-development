@@ -4,7 +4,7 @@ let outputDiv = document.querySelector('#output');
 
 // eslint-disable-next-line no-unused-vars
 function movieTitlesWithMap(movies, outputDiv) {
-	let titles = movies.map(movie => {
+	let titles = movies.map((movie) => {
 		let p = document.createElement('p');
 		p.textContent = movie.title;
 		return p;

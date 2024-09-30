@@ -3,7 +3,8 @@ import axios from 'axios';
 let url = 'http://api.open-notify.org/astros.json';
 
 // Assumes Axios is globallay available
-axios.get(url)
+axios
+	.get(url)
 	.then((response) => {
 		// response includes response.data
 		let astronauts = response.data;
@@ -15,6 +16,6 @@ axios.get(url)
 		});
 		list.replaceChildren(...items);
 	})
-	.catch(error => {
+	.catch((error) => {
 		console.error('Could not fetch or render astronauts with Axios:', error.message);
 	});
