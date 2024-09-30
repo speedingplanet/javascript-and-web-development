@@ -68,6 +68,10 @@
 					<div id="input-log"></div>
 				</div>
 				<div class="col">
+					<h3>Blur</h3>
+					<div id="blur-log"></div>
+				</div>
+				<div class="col">
 					<h3>Change</h3>
 					<div id="change-log"></div>
 				</div>
@@ -90,6 +94,8 @@
 			textField.addEventListener('input', (e) =>
 				logMessage(`${e.data} / ${e.target.value}`, 'input-log')
 			);
+
+			textField.addEventListener('blur', () => logMessage(textField.value, 'blur-log'));
 
 			textField.addEventListener('change', () => logMessage(textField.value, 'change-log'));
 
