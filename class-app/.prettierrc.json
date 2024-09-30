@@ -4,5 +4,6 @@
 	"bracketSameLine": false,
 	"htmlWhitespaceSensitivity": "ignore",
 	"singleAttributePerLine": true,
+	"trailingComma": "es5",
 	"useTabs": true
 }
