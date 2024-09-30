@@ -102,13 +102,7 @@ In `greeter.js` add an event listener to the form field. (What's the name of the
 
 Hint: The `value` property of the form field is a String. Strings have a `length` property. Is the `length` property present? Is it greater than 0? What's the best condition to use here?
 
-<<<<<<< HEAD
-The button should be disabled at the time the page loads. You can do this in HTML (add the `disabled` attribute to the button) or in JavaScript. Your choice.
-
-=======
-
-> > > > > > > day-2
-> > > > > > > Load greeter.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html.
+Load greeter.html into your browser to see if it works. If you've started the dev server, it should be available at http://localhost:5173/labs/greeter.html.
 
 ## Lab 6: Improve for testing
 
