@@ -106,14 +106,44 @@ Load greeter.html into your browser to see if it works. If you've started the de
 
 ## Lab 6: Improve for testing
 
-We should improve our code to make it easier to test. There are too many cases where our event handlers assume elements are available, making testing difficult.
+What do we need to test?
 
-- Move the assignments of the references to the "Say hello" button, the input text field, and the output div, to the top of `greeter.js`
-- Change the event handler for the button (`clickHandler`) so that it takes references to the text field and the output div as arguments
-- Change the assignment of `clickHandler` so that instead of a function reference, you call `clickHandler` with the appropriate arguments
-- Change the event handler for the form field (`inputHandler`) so that it takes references to an event object and the "Say hello" button as arguments.
-- Change the assignment of `inputHandler` so that instead of a function reference, you call `inputHandler` with the appropriate arguments
-- `export` both `clickHandler` and `inputHandler` so that a test file can import them
+1. Is the "Click me" button enabled after typing some letters in the "Enter your name" text field
+2. After clicking on the "Click me" button, the text is displayed
+
+### Setup
+
+- Create a file: greeter.test.js in the tests/ folder
+- import QUnit
+- Maybe: Write a basic test with QUnit to make sure it works
+
+```javascript
+QUnit.test('Basic test', (assert) => {
+  assert.equal(2 + 5, 7);
+});
+```
+
+- import Puppeteer
+- Set up a QUnit module with hooks
+  - before: Set up the browser
+  - beforeEach: Set up the page
+  - after: close the browser
+- Then write tests
+
+### Test 1
+- Get a reference to the button
+  - Maybe check to see that it's disabled
+- Get a reference to the text field
+  - Use the `fill()` function to type into the field
+  - Or experiment with other paths to typing in the text field
+- Check to see if the button is now enabled
+
+### Test 2
+- Get a reference to the button
+- Get a reference to the text field
+  - Use the `fill()` function to type into the field
+- Click on the button
+- How can we determine if the name appears in the page?
 
 ## Lab 7: More event handling
 

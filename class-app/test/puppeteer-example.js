@@ -50,6 +50,22 @@ QUnit.module('Puppeteer tests', (hooks) => {
 		assert.true(buttonText.trim() === 'Add text');
 	});
 
+	QUnit.test('Access DOM element', async (assert) => {
+		let button = await page.$eval('#add-text-button', button => {
+			// Only have access to the ACTUAL DOM element here
+			console.log(button.classList.length);
+
+			// Return a raw value
+			return button.textContent; // Works! Because it's a raw value
+
+			// Return the element, gets re-wrapped in an ElementHandle
+			/** @see https://pptr.dev/api/puppeteer.elementhandle */
+			// return button;
+			
+		});
+
+	});
+
 	hooks.after(async () => {
 		await browser.close();
 	});
