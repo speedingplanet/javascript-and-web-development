@@ -41,6 +41,15 @@ QUnit.module('Puppeteer tests', (hooks) => {
 		assert.equal(updatedLength, 4);
 	});
 
+	QUnit.test('Access DOM element properties', async (assert) => {
+		let buttonText = await page.$eval('#add-text-button', (button) => {
+			// Should have an Element reference to the button here
+			return button.textContent;
+		});
+
+		assert.true(buttonText.trim() === 'Add text');
+	});
+
 	hooks.after(async () => {
 		await browser.close();
 	});
