@@ -1,2 +1,17 @@
 import spConfig from '@speedingplanet/eslint-config';
-export default [...spConfig];
+import qunitConfig from 'eslint-plugin-qunit';
+
+export default [
+	...spConfig,
+	{
+		plugins: { qunit: qunitConfig },
+		rules: {
+			...qunitConfig.configs.recommended.rules,
+			'qunit/no-assert-equal': 'warn',
+		},
+		files: ['**/test/*.js'],
+	},
+	{
+		ignores: ['!**/test', '**/tmp/*'],
+	},
+];

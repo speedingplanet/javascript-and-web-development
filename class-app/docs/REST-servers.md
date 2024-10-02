@@ -12,38 +12,35 @@ PUT -> Add or replace a document on the server
 PATCH -> Defined later as a partial update
 DELETE -> Delete a document on the server
 
-
 GET /resource -> Return a list of that resource
 GET /resource/{id} -> Return one instance of that resource with the id {id}
 POST /resource {+ resource data} -> Creates a new instance of resource
 PUT /resource/{id} {+ replacement resource} -> Replace the resource at {id} with the replacement
-                                               replacement must be a complete resource
+replacement must be a complete resource
 PATCH /resource/{id} {+ resource update} -> Update the resource in place with the changes in resource update
 DELETE /resource/{id} -> Delete the resource at {id}
 
 Originally
 {
-  id: 1,
-  name: "John Paxton",
-  city: "Nutley"
+id: 1,
+name: "John Paxton",
+city: "Nutley"
 }
 
 PUT /people/1
 [Need a complete resource]
 {
-  id: 1,
-  name: "John Paxton",
-  city: "Jersey City" // Only this updated
+id: 1,
+name: "John Paxton",
+city: "Jersey City" // Only this updated
 }
 
 Contrast
 
 PATCH /people/1
 {
-  city: "Hoboken"
+city: "Hoboken"
 }
-
-
 
 # Code HTTP/Web Call type Database/SQL
 

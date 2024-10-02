@@ -1,7 +1,7 @@
 import { add } from '../demos/qunit/utilities.js';
 import QUnit from 'qunit';
 
-QUnit.module('Module 1', (hooks) => {
+QUnit.module('Basic tests', (hooks) => {
 	let testValue = 1;
 
 	hooks.before(() => {
@@ -13,12 +13,12 @@ QUnit.module('Module 1', (hooks) => {
 	});
 
 	QUnit.test('Testing add()', (assert) => {
-		assert.equal(add(2, 4), 6);
+		assert.strictEqual(add(2, 4), 6);
 		testValue++;
 	});
 
 	QUnit.test('assert.true', (assert) => {
-		assert.true(1 === 1);
+		assert.ok(1);
 		testValue++;
 	});
 

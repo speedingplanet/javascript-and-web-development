@@ -11,6 +11,7 @@ You could be developing in one (or more) of several different coding situations:
   - Lit
 
 For a framework, it's easy-ish to test a component in isolation
+
 - Testing framework loads up component framework utilities
 - Testing framework render the component
 - Test component behavior
@@ -19,6 +20,7 @@ For a framework, it's easy-ish to test a component in isolation
 Using Vanilla JS and HTML we have a question for testing:
 
 How do we test the combination of JS and HTML?
+
 - Leave our code as part of a page
   - Unit testing is difficult-to-impossible
     - Or at least awkward as event handlers are extracted for testing

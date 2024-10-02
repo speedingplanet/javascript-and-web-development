@@ -1,5 +1,10 @@
 import QUnit from 'qunit';
-import puppeteer, { Browser, Page } from 'puppeteer';
+import puppeteer from 'puppeteer';
+
+/**
+ * @typedef {import('puppeteer').Browser} Browser
+ * @typedef {import('puppeteer').Page} Page
+ */
 
 let url = 'http://localhost:5173/demos/dom/adding-text-vs-html.html';
 
@@ -28,7 +33,7 @@ QUnit.module('Puppeteer tests', (hooks) => {
 
 		// Check assumptions first
 		let originalLength = (await page.$$('ol > li')).length;
-		assert.equal(originalLength, 3);
+		assert.strictEqual(originalLength, 3);
 
 		// locator uses CSS selectors but also others
 		// locator returns an Element (not an HTML or DOM Element)
@@ -38,7 +43,7 @@ QUnit.module('Puppeteer tests', (hooks) => {
 		// page.$$() -> document.querySelectorAll(), returns Array<ElementHandle>
 		const updatedLength = (await page.$$('ol > li')).length;
 
-		assert.equal(updatedLength, 4);
+		assert.strictEqual(updatedLength, 4);
 	});
 
 	QUnit.test('Access DOM element properties', async (assert) => {
@@ -47,11 +52,12 @@ QUnit.module('Puppeteer tests', (hooks) => {
 			return button.textContent;
 		});
 
-		assert.true(buttonText.trim() === 'Add text');
+		assert.strictEqual(buttonText.trim(), 'Add text');
 	});
 
 	QUnit.test('Access DOM element', async (assert) => {
-		let button = await page.$eval('#add-text-button', button => {
+		// eslint-disable-next-line no-unused-vars
+		let buttonText = await page.$eval('#add-text-button', (button) => {
 			// Only have access to the ACTUAL DOM element here
 			console.log(button.classList.length);
 
@@ -61,9 +67,10 @@ QUnit.module('Puppeteer tests', (hooks) => {
 			// Return the element, gets re-wrapped in an ElementHandle
 			/** @see https://pptr.dev/api/puppeteer.elementhandle */
 			// return button;
-			
 		});
 
+		// This allows us to have no assertions
+		assert.expect(0);
 	});
 
 	hooks.after(async () => {

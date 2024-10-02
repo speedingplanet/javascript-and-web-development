@@ -119,7 +119,7 @@ What do we need to test?
 
 ```javascript
 QUnit.test('Basic test', (assert) => {
-  assert.equal(2 + 5, 7);
+	assert.equal(2 + 5, 7);
 });
 ```
 
@@ -131,6 +131,7 @@ QUnit.test('Basic test', (assert) => {
 - Then write tests
 
 ### Test 1
+
 - Get a reference to the button
   - Maybe check to see that it's disabled
 - Get a reference to the text field
@@ -139,6 +140,7 @@ QUnit.test('Basic test', (assert) => {
 - Check to see if the button is now enabled
 
 ### Test 2
+
 - Get a reference to the button
 - Get a reference to the text field
   - Use the `fill()` function to type into the field
