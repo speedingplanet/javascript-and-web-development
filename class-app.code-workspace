@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"path": "javascript-labs/class-app"
+		}
+	],
+	"settings": {
+		"workbench.colorCustomizations": {
+			"activityBar.activeBackground": "#3968cc",
+			"activityBar.background": "#3968cc",
+			"activityBar.foreground": "#e7e7e7",
+			"activityBar.inactiveForeground": "#e7e7e799",
+			"activityBarBadge.background": "#651a32",
+			"activityBarBadge.foreground": "#e7e7e7",
+			"commandCenter.border": "#e7e7e799",
+			"sash.hoverBorder": "#3968cc",
+			"statusBar.background": "#2b53a7",
+			"statusBar.foreground": "#e7e7e7",
+			"statusBarItem.hoverBackground": "#3968cc",
+			"statusBarItem.remoteBackground": "#2b53a7",
+			"statusBarItem.remoteForeground": "#e7e7e7",
+			"titleBar.activeBackground": "#2b53a7",
+			"titleBar.activeForeground": "#e7e7e7",
+			"titleBar.inactiveBackground": "#2b53a799",
+			"titleBar.inactiveForeground": "#e7e7e799"
+		},
+		"peacock.color": "#2b53a7"
+	}
+}
