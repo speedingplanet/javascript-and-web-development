@@ -1,0 +1,5 @@
+dist
+backups
+**/.vscode/*.json
+package-lock.json
+*.code-workspace

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Let and Const</title>
+	</head>
+	<body>
+		<h1>Let and Const</h1>
+		<p>Look at the console for results.</p>
+
+		<script>
+			const constX = 10;
+
+			console.log('constX is', constX, 'about to try changing it.');
+			// constX = 500;
+			// console.log('constX is', constX, 'after changing it.');
+
+			const anotherX = 42;
+
+			try {
+				anotherX = 99;
+			} catch (err) {
+				console.log(err);
+				// Expected output: TypeError: invalid assignment to const `anotherX'
+				// (Note: the exact output may be browser-dependent)
+			}
+
+			console.log(anotherX);
+			// Expected output: 42
+		</script>
+	</body>
+</html>

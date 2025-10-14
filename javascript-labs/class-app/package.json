@@ -1,0 +1,15 @@
+{
+	"name": "class-app",
+	"private": true,
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"format": "prettier . --check",
+		"format:write": "prettier . --write",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"preview": "vite preview"
+	}
+}

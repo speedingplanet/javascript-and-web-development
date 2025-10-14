@@ -1,7 +1,0 @@
-nav li > a {
-	text-decoration: none;
-}
-nav li > a.active {
-	font-weight: bold;
-	text-decoration: underline;
-}

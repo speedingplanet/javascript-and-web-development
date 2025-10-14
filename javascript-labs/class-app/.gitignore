@@ -10,11 +10,10 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
-backups
 *.local
 
 # Editor directories and files
-.vscode
+.vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
@@ -23,6 +22,3 @@ backups
 *.njsproj
 *.sln
 *.sw?
-tmp/
-
-TODO.md

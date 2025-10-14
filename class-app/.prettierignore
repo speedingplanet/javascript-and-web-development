@@ -1,8 +1,0 @@
-dist
-backups
-.vscode
-package.json
-package-lock.json
-*.css
-tsconfig.*json
-tmp
