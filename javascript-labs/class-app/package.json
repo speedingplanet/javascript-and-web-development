@@ -10,6 +10,7 @@
 		"format:write": "prettier . --write",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"rest-server": "json-server data/static-data.json --port 8001"
 	}
 }

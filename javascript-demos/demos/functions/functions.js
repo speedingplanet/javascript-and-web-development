@@ -2,16 +2,22 @@
 
 // Typical function declaration
 function add(x, y) {
+	// Hoisted
+	// Creates "this"
 	return x + y;
 }
 
 // Function expression
 const expressionFunction = function () {
+	// NOT hoisted
+	// Creates "this"
 	console.log('This is a function expression');
 };
 
 // Arrow function (see arrow-functions.js for more)
 const arrowFunction = () => {
+	// NOT hoisted
+	// Does NOT create "this"
 	console.log('This is an arrow function');
 };
 
