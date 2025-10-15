@@ -70,6 +70,9 @@ let allStates = [...easternStates, ...westernStates];
 // Unwind/spread an array into arguments
 easternStates.push(...westernStates);
 
+// Pushes the array ref, maybe not what you want to do
+// easternStates.push(westernStates);
+
 // Find items in an array
 // Returns the index of the matching element, or -1 if not found
 // searches left to right

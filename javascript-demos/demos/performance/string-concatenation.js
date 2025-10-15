@@ -24,7 +24,7 @@ for (let i = 0; i < iterations; i++) {
 	// Infix, template, adding value
 	// text = `${text}, ${i}`;
 	// Infix, template, +=
-	// text += `, ${i}`;
+	text += `, ${i}`;
 }
 
 const end = performance.now();
