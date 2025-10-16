@@ -111,6 +111,10 @@ export class EmployeeV2 {
 		return this.#lastName;
 	}
 
+	getFullName() {
+		return `${this.getFirstName()} ${this.getLastName()}`;
+	}
+
 	getId() {
 		return this.#employeeId;
 	}
@@ -160,7 +164,9 @@ export class EmployeeV2 {
 }
 
 let meV2 = new EmployeeV2('John', 'Paxton', 'Associate');
-console.log(meV2.jobTitle);
+console.log(meV2.jobTitle); // undefined
+
+EmployeeV2.companyName = 'MathWorks';
 
 // Error, jobTitle is read-only
 // meV2.jobTitle = 'Senior Associate';
