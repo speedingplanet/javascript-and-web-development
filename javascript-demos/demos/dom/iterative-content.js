@@ -1,4 +1,7 @@
-import { movies } from '../../data/movies-module.js';
+// import { movies } from '../../data/movies-module.js';
+import data from '../../data/all-data.json' with { type: 'json' };
+
+const { movies } = data;
 
 // Efficient, somewhat verbose
 function useCreateElement() {
