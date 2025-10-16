@@ -48,9 +48,10 @@
 		<!-- NOT production ready, or even production style. -->
 		<!-- Purely demonstrating Vue syntax -->
 		<!-- Reference: https://v3.vuejs.org/guide/introduction.html#getting-started -->
-		<script src="https://unpkg.com/vue@next"></script>
+		<script src="https://unpkg.com/vue@3"></script>
 		<script type="module">
-			import { movies } from '../../data/movies-module.js';
+			import data from '../../data/all-data.json' with { type: 'json' };
+			let { movies } = data;
 
 			const app = Vue.createApp({
 				data() {
